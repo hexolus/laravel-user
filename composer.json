@@ -1,0 +1,40 @@
+{
+    "name": "hexolus/laravel-user",
+    "description": "Laravel User Interfaces",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Meta Sanjaya",
+            "email": "metasanjaya@gmail.com"
+        }
+    ],
+    "require": {
+        "hexolus/laravel-uuid": "^1.0",
+        "spatie/laravel-permission": "^3.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hexolus\\Laravel\\User\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hexolus\\Laravel\\User\\Providers\\UserServiceProvider"
+            ],
+            "dont-discover": [
+                "orchestra/testbench",
+                "barryvdh/laravel-ide-helper"
+            ]
+        }
+    },
+    "version": "1.0.0",
+    "require-dev": {
+        "orchestra/testbench": "^6.7",
+        "barryvdh/laravel-ide-helper": "^2.9"
+    }
+}

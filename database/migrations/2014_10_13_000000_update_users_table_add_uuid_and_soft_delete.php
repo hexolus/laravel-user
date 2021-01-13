@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class UpdateUsersTableAddUuidAndSoftDelete extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->uuid(config('user.uuid_column'))->unique()->after('id');
+
+            if(config('user.soft_delete')) {
+                $table->softDeletes();
+            }
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->removeColumn(config('user.uuid_column'));
+
+            if(config('user.soft_delete')) {
+                $table->removeColumn('deleted_at');
+            }
+        });
+    }
+}
