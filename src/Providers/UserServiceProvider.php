@@ -8,12 +8,7 @@ class UserServiceProvider extends LaravelServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/../../config/user.php',
-            'user'
-        );
-
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+        //
     }
 
     public function boot()
@@ -22,5 +17,12 @@ class UserServiceProvider extends LaravelServiceProvider
         $this->publishes([
             __DIR__ . '/../../config/user.php' => config_path('user.php'),
         ], 'config');
+
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/user.php',
+            'user'
+        );
+
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 }

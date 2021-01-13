@@ -13,6 +13,10 @@
         "hexolus/laravel-uuid": "^1.0",
         "spatie/laravel-permission": "^3.18"
     },
+    "require-dev": {
+        "orchestra/testbench": "^6.7",
+        "barryvdh/laravel-ide-helper": "^2.9"
+    },
     "autoload": {
         "psr-4": {
             "Hexolus\\Laravel\\User\\": "src/"
@@ -27,14 +31,9 @@
                 "Hexolus\\Laravel\\User\\Providers\\UserServiceProvider"
             ],
             "dont-discover": [
-                "orchestra/testbench",
-                "barryvdh/laravel-ide-helper"
+                "*"
             ]
         }
     },
-    "version": "1.0.1",
-    "require-dev": {
-        "orchestra/testbench": "^6.7",
-        "barryvdh/laravel-ide-helper": "^2.9"
-    }
+    "version": "1.0.1"
 }
