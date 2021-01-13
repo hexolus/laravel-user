@@ -13,7 +13,7 @@ class UserServiceProvider extends LaravelServiceProvider
             'user'
         );
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
     }
 
     public function boot()
